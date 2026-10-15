@@ -67,6 +67,12 @@ public class StudentManagementApp {
                 return;
             }
 
+            if (!email.matches("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$")) {
+                JOptionPane.showMessageDialog(window,
+                        "Please enter a valid email address!");
+                return;
+            }
+
             model.addRow(new Object[]{id[0]++, name, email});
 
             nameField.setText("");
@@ -105,6 +111,12 @@ public class StudentManagementApp {
             if (name.isEmpty() || email.isEmpty()) {
                 JOptionPane.showMessageDialog(window,
                         "Please fill in all fields!");
+                return;
+            }
+
+            if (!email.matches("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$")) {
+                JOptionPane.showMessageDialog(window,
+                        "Please enter a valid email address!");
                 return;
             }
 
